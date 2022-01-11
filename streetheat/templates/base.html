@@ -33,11 +33,11 @@
     <title>StreetHeat {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+    <header class="container-fluid">
+        <div id="sh-topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>Boutique</strong> Ado</h2>
+                    <h2 class="logo-font text-black my-0"><strong>Street</strong>Heat</h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -56,6 +56,7 @@
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    {% if request.user.is_authenticated %}
                     <li class="list-inline-item dropdown">
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuBtn1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,20 +64,21 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuBtn1">
                                 <li>
-                                    {% if request.user.is_authenticated %}
-                                        {% if request.user.is_superuser %}
-                                            <a href="" class="dropdown-item">Product Management</a>
-                                        {% endif %}
-                                        <a href="" class="dropdown-item">My Profile</a>
-                                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                    {% else %}
-                                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    {% if request.user.is_superuser %}
+                                        <a href="" class="dropdown-item">Product Management</a>
                                     {% endif %}
+                                    <a href="" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 </li>
                             </ul>
                           </div>
                     </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    </li>
+                    {% endif %}
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold
                             {% else %}text-black
@@ -102,7 +104,6 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
             </nav>
         </div>
         <div id="delivery-banner" class="row text-center">
