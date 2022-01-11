@@ -79,7 +79,7 @@ StreetHeat v1.0 is a patented garment accessory that provides a user extra comfo
 <a name="CREDS"></a>
 # Credits
 ## Code Credits
--   html: Created the BS 5.1 version of the CI account dropdown
+-   html/css: Recreated the Home page using the Code Institute code provided in the Bontique Ado Project for the Full Stack Software Developer curriculum as a template. I changed the markup and styles for Bootstrap 5.1 and consolidated a number of the core BS styles into custom style groups. https://codeinstitute.net/global/
 -   RegEx input patterns from W3Schools - https://www.w3schools.com/tags/att_input_pattern.asp
 -   Avatar Icons made by [Flaticon](https://www.flaticon.com/)
 -   The localStorage check code in script.js is from [MDN - Using_the_Web_Storage_API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API). This code checks to make sure that the browser can support localStorage and has it turned on. Find code use indicated by "CODE REUSE - localStorage Check "
