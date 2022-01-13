@@ -29,6 +29,40 @@
 # Use Case
 StreetHeat v1.0 is a patented garment accessory that provides a user extra comfort by attaching a heating or cooling element to an existing piece of clothing, such as a scarf. The product website should show a prospective customer where they can purchase StreetHeat in proximaty to their current location while also providing the visitor with their location's current weather, traffic conditions, and a map that displays locations of coffee houses, soup shops, ice cream shops, smoothie shops or other establishments a user might be interested in when trying to battle the elements. A visitor should be able to view a product page on a specific version of StreetHeat as well as a means to purchase the product online.
 
+> ### Important Notes
+>
+>-  The primary focus of this project is to display Django, Python, and database skills learned in the Full Stack Frameowrks with Django module of the Salem State University / Code Institute Full Stack Software Developer Certificate Program.
+
+<a name="US"></a>
+
+## User Stories
+
+>-  I used the User Story list shown in the CI curriculum as a template:
+>-  User Story List  - [View](_documentation/product_specs/MS4 User Stories - v1.pdf)
+
+-   ### Anonymous AND Logged In User Experience
+    -   #### **Story 1** As a Site Visitor, I want to be able to search recipes by using a quick search method.
+        -  #### *Acceptance Criteria* -- Duplicated in Testing Section
+            1.  A search form is presented without leaving the home page
+            2.  A minimal number of search criteria is presented to choose from
+            3.  When the form is submitted, user is redirected to the advanced search page and presented the results list/table
+
+<a name="REQS"></a>
+## Requirements
+(Alignments to User Stories are in paratheses)
+-   Application must be responsive and fully functional to use on any device
+-   Allow users to search products
+-   Allow users to log in and log out of the app
+-   Logging in provides user with feature to rate a product
+-   Logging in provides a site admin with feature to build a product
+-   Allow users to view details about the product including an image
+
+<a name="BACKLOG"></a>
+## Future Requirements
+(Alignments to User Stories are in paratheses, if available)
+-   Include a weather indicator on the home page
+-   Allow users to view top 5 rated products
+-   Allow Users to choose an avatar from a pallet of avatars for their profile
 
 <a name="TECH"></a>
 # Technical Background
