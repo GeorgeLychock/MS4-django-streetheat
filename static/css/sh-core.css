@@ -92,14 +92,6 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
-.sh-logo-font {
-    text-transform: uppercase;
-}
-
-.sh-main-logo-link {
-    width: fit-content;
-}
-
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: 'Montserrat', 'FreeSans', sans-serif;
@@ -115,8 +107,8 @@ p {
 
 /* Common Text Colors */
 .sh-p-color-01 {color: #004d99;}
-.sh-i-color-01 {color: #93d49d;}
-.sh-h1-color-01 {color: #666;}
+.sh-i-color-01 {color: #ffb570}
+.sh-h1-color-01 {color: #f80;}
 .sh-btn-color-01 {color: rgba(147, 212, 157, .25);}
 
 /* Common Background Colors*/
@@ -142,8 +134,20 @@ p {
   width: 100%;
 }
 
+/* Header */
+.sh-logo-font {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 3rem;
+}
 
+.sh-main-logo-link {
+    width: fit-content;
+}
 
+/* Forms */
+.sh-form-input {
+  min-width: 20rem !important;
+}
 
 
 /* @media */
