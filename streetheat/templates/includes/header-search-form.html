@@ -1,13 +1,10 @@
+<!-- Common Search Form -->
 <form method="GET" action="">
-    <div class="input-group w-100">
-        <input class="form-control border border-black rounded-0 sh-form-input" type="text" name="query"
-            placeholder="Search our site">
-        <div class="input-group-append">
-            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                <span class="material-icons-outlined sh-i-color-01">
-                    search
-                </span>
-            </button>
-        </div>
+    <div class="input-group mb-3 sh-search-form">
+        <input type="text" class="form-control" name="query" placeholder="Search our site" aria-label="Search"
+            aria-describedby="search-form-1">
+        <button class="btn border border-black rounded-0" id="search-form-1" type="submit">
+            <span class="material-icons-outlined sh-i-color-04">search</span>
+        </button>
     </div>
 </form>

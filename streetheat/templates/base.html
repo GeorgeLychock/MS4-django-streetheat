@@ -37,44 +37,114 @@
 
     <title>StreetHeat {% block extra_title %}{% endblock %}</title>
   </head>
-  <body>
+<body>
     <div class="container">
         <header class="row mt-md-4">
-            <div class="col col-md-9">
+            <div class="col-12 col-md-9">
+                <!-- Desktop Header -->
                 <div class="row pt-lg-2">
-                    <!-- Header Logo -->
-                    <div class="col-10 col-lg-5 my-auto py-1 py-lg-0">
-                        <a href="{% url 'home' %}" class="nav-link sh-main-logo-link">
-                            <h1 class="my-0 sh-logo-font sh-h1-color-01"><em>Street<small>Heat</small></em></h1>
+                    <div class="d-none d-md-block col-10 col-lg-5 my-auto py-1 py-lg-0">
+                        <a href="{% url 'home' %}" class="nav-link">
+                            <h1 class="my-0 sh-logo-font sh-h-color-01"><em>Street<small>Heat</small></em></h1>
                         </a>
                     </div>
-                    <!-- Desktop Search -->
-                    <div class="d-none d-lg-flex col-lg-7 my-auto ps-lg-4">
+                    <div class="d-none d-md-block col-12 col-lg-7 my-auto py-1 py-lg-0 d-none d-lg-flex">
                         {% include 'includes/header-search-form.html' %}
                     </div>
-                    <!-- Mobile Search -->
-                    <div class="d-block d-lg-none col-2">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="mobile-search-drop"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Search
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="mobile-search-drop">
-                                <li>
-                                    {% include 'includes/header-search-form.html' %}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
+                </div>
+                <div class="row d-none d-md-block pt-md-4">
+                    <div class="col-12">
                         {% include 'includes/main-nav.html' %}
                     </div>
                 </div>
+                <!-- Mobile Header -->
+                <div class="row">
+                    <div class="d-md-none col">
+                        {% include 'includes/main-nav.html' %}
+                    </div>
+                </div>
+                <!-- Mobile Apps Menu -->
+                <div class="row d-md-none">
+                    <nav class="col-12 my-auto py-1 py-lg-0">
+                        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                            <li class="list-inline-item dropdown">
+                                {% include 'includes/user-menu.html' %}
+                            </li>
+                            <li class="list-inline-item">
+                                {% include 'includes/shopping-cart-link.html' %}
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" id="mobile-search-drop"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="material-icons-outlined sh-i-color-01">search</span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="mobile-search-drop">
+                                        <li>
+                                            {% include 'includes/header-search-form.html' %}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="sh-apps-menu">
+                                    <i class="bi bi-umbrella fs-2 sh-i-color-01"></i>
+                                    <span class="material-icons-outlined fs-2 sh-i-color-01">flight</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="col-md-3 pt-md-4">
-                {% include 'includes/user-apps-menu.html' %}
+            <!-- Desktop Apps Menu -->
+            <div class="d-none d-md-block col-md-3 pt-md-4 text-center sh-i-color-03">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="d-inline"><span>{% include 'includes/user-menu.html' %}</span></div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-inline"><span class="material-icons-outlined pt-2 fs-1">settings</span></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="d-inline"><i class="bi bi-umbrella fs-1"></i></div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-inline"><span class="material-icons-outlined pt-2 fs-1">flight</span></div>
+                    </div>
+                </div>
             </div>
         </header>
+    </div>
+    <!-- Delivery Banner -->
+    <div class="container">
+        <div class="row sh-delivery-banner sh-b-color-02">
+            <div class="col">
+                {% include 'includes/delivery-banner.html' %}
+            </div>
+        </div>
+    </div>
+    <!-- Main Content Area -->
+    <div class="container">
+        <article>
+            <div class="row mt-md-4">
+                <!-- Desktop User Menu -->
+                <nav class="d-none d-md-block col-md-1 pt-md-4 sh-dt-sidebars sh-i-color-02 text-center">
+                        <div class="">{% include 'includes/shopping-cart-link.html' %}</div>
+                </nav>
+                <!-- Main Content -->
+                <section class="col col-md-8 mt-4">
+                    {% block content %}
+                    {% endblock %}
+                </section>
+                <!-- Desktop Aside -->
+                <aside class="d-none d-md-block col col-md-3">
+                    {% block aside %}
+                    {% endblock %}
+                </aside>
+            </div>
+        </article>
     </div>
 
 
@@ -91,6 +161,6 @@
     {% block postloadjs %}
     {% endblock %}
 
-    
-  </body>
+
+</body>
 </html>

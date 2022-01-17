@@ -66,6 +66,11 @@ button:focus {
   float: left;
 }
 
+.bg-light {
+  --bs-bg-opacity: .6;
+  background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important;
+}
+
 
 /* Reused CSS */
 /* from Code Institute Django Module */
@@ -88,7 +93,7 @@ body {
     background-size: cover;
     background-color: #fff;
     height: calc(100vh - 164px);
-    color: #f50;
+    color: #f80;
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -107,13 +112,17 @@ p {
 
 /* Common Text Colors */
 .sh-p-color-01 {color: #004d99;}
-.sh-i-color-01 {color: #ffb570}
-.sh-h1-color-01 {color: #f80;}
+.sh-i-color-01 {color: #ffb570} /* !important changed for lg media*/
+.sh-i-color-02 {color: whitesmoke}
+.sh-i-color-03 {color: #ffb570}
+.sh-i-color-04 {color: #004d99;}
+.sh-h-color-01 {color: #f80;}
+.sh-h-color-02 {color: whitesmoke}
 .sh-btn-color-01 {color: rgba(147, 212, 157, .25);}
 
 /* Common Background Colors*/
-.sh-b-color-00 {background-color: rgb(213, 121, 102, .75);}
-.sh-b-color-01 {background-color: rgba(147, 212, 157, .25);}
+.sh-b-color-01 {background-color: rgb(213, 121, 102, .75);}
+.sh-b-color-02 {background-color: rgba(0, 76, 153, .75);}
 
 
 /* Common Positioning */
@@ -137,16 +146,28 @@ p {
 /* Header */
 .sh-logo-font {
   font-family: 'Noto Sans', sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
-.sh-main-logo-link {
-    width: fit-content;
+.sh-dt-sidebars {
+  background-color: rgba(0, 76, 153, .5);
+  min-height: 600px;
+  border: solid 1px whitesmoke;
+  border-radius: 25px;
+}
+
+.sh-delivery-banner {
+  border: solid 1px whitesmoke;
+  text-align: center;
 }
 
 /* Forms */
 .sh-form-input {
   min-width: 20rem !important;
+}
+
+.sh-search-form {
+  width: max-content;
 }
 
 
@@ -169,8 +190,14 @@ p {
           left: 0;
           z-index: 1030;
       }
-  
-      .sh-cont-header {
-          padding-top: 5px;
+      .sh-logo-font {
+        font-size: 3rem;
       }
+      .sh-cont-header {
+        padding-top: 5px;
+      }
+  }
+
+  @media (min-width: 768px) {
+    .sh-i-color-01 {color: whitesmoke}
   }
